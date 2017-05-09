@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">DuoiHinhBatChu</string>
+    <string name="str_next">Câu tiếp theo</string>
+    <string name="str_true">Đáp án chính xác</string>
+</resources>
