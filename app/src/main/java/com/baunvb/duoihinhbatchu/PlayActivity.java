@@ -1,12 +1,13 @@
 package com.baunvb.duoihinhbatchu;
 
+import android.app.Dialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -29,7 +30,7 @@ public class PlayActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main_layout);
+        setContentView(R.layout.play_layout);
         initView();
         setInvisibleButton();
         btNext.setVisibility(View.INVISIBLE);
@@ -92,6 +93,10 @@ public class PlayActivity extends AppCompatActivity implements View.OnClickListe
             arrBtHover.get(i).setOnClickListener(this);
         }
 
+    }
+
+    public int getScore() {
+        return score;
     }
 
     private void renewQuestion() {
@@ -213,8 +218,8 @@ public class PlayActivity extends AppCompatActivity implements View.OnClickListe
                 tvToast.setText("Bạn đã trả lời sai!");
                 tvAlive.setText(alive + "");
                 if (alive == 0) {
-                    tvToast.setText("End Game!");
-                    finish();
+                    DialogEndGame dialogEndGame = new DialogEndGame(this, score);
+                    dialogEndGame.show();
                 }
             }
             btNext.setVisibility(View.VISIBLE);

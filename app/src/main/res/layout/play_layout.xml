@@ -69,7 +69,7 @@
         android:layout_below="@id/fl_right"
         android:layout_centerHorizontal="true"
         android:text="@string/str_next"
-        android:background="@drawable/bg_next"
+        android:background="@drawable/bg_button"
         android:textColor="@color/white"
         android:textStyle="bold"
         android:textSize="20dp"

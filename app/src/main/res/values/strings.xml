@@ -2,4 +2,6 @@
     <string name="app_name">DuoiHinhBatChu</string>
     <string name="str_next">Câu tiếp theo</string>
     <string name="str_true">Đáp án chính xác</string>
+    <string name="play">Start Game</string>
+    <string name="quit">QUIT GAME</string>
 </resources>

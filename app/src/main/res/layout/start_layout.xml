@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_game_play"
+    android:gravity="center">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_marginBottom="50dp"
+        android:text="ĐUỔI HÌNH BẮT CHỮ"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:textColor="@color/colorPrimary"
+           android:layout_height="wrap_content" />
+
+    <Button
+        android:layout_width="200dp"
+        android:id="@+id/start"
+        android:layout_below="@id/fl_right"
+        android:text="@string/play"
+        android:background="@drawable/bg_button"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:layout_height="50dp" />
+
+    <Button
+        android:layout_width="200dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/quit"
+        android:layout_below="@id/fl_right"
+        android:text="@string/quit"
+        android:background="@drawable/bg_button"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:layout_height="50dp" />
+
+
+</LinearLayout>
