@@ -1,7 +1,5 @@
 package com.baunvb.duoihinhbatchu;
 
-import android.app.Dialog;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -13,7 +11,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class PlayActivity extends AppCompatActivity implements View.OnClickListener {
-    private int index, length, i;
+    private int index, length, flag;
     private int alive, score;
     private String name;
 
@@ -106,7 +104,7 @@ public class PlayActivity extends AppCompatActivity implements View.OnClickListe
         index = randomQuestion();
         name = questionMgn.getArrQuestion().get(index).getName().toString();
         length = name.length();
-        i = 0;
+        flag = 0;
         tvToast.setVisibility(View.INVISIBLE);
         imgQuestion.setImageResource(questionMgn.getArrQuestion().get(index).getId());
         setInvisibleButton();
@@ -206,7 +204,9 @@ public class PlayActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     public void resetAnswer(Button bt){
-        i--;
+        if (!bt.getText().toString().isEmpty()){
+            flag--;
+        }
         bt.setText(null);
         int flag = bt.getPaintFlags();
         for (int i = 0; i < arrBtHover.size(); i++){
@@ -219,8 +219,8 @@ public class PlayActivity extends AppCompatActivity implements View.OnClickListe
     public void actionButton(Button bt){
         bt.setVisibility(View.INVISIBLE);
         setAnswer(bt, index);
-        i++;
-        if (i == length) {
+        flag++;
+        if (flag == length) {
             if (isTrue(index)) {
                 tvToast.setText("Bạn đã trả lời đúng!");
                 score = score + 100;
