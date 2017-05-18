@@ -91,17 +91,17 @@ public class PlayActivity extends AppCompatActivity implements View.OnClickListe
 
         for (int i = 0; i < arrBtHover.size(); i++) {
             arrBtHover.get(i).setOnClickListener(this);
+            arrBtHover.get(i).setPaintFlags(i);
+            arrBtResult.get(i).setOnClickListener(this);
         }
 
-    }
-
-    public int getScore() {
-        return score;
     }
 
     private void renewQuestion() {
         for (int i = 0; i < arrBtHover.size(); i++) {
             arrBtHover.get(i).setText(null);
+            arrBtHover.get(i).setClickable(true);
+            arrBtResult.get(i).setClickable(true);
         }
         index = randomQuestion();
         name = questionMgn.getArrQuestion().get(index).getName().toString();
@@ -199,7 +199,19 @@ public class PlayActivity extends AppCompatActivity implements View.OnClickListe
         for (int i = 0; i < length; i++) {
             if (arrBtResult.get(i).getText().toString().isEmpty()) {
                 arrBtResult.get(i).setText(str);
+                arrBtResult.get(i).setPaintFlags(bt.getPaintFlags());
                 break;
+            }
+        }
+    }
+
+    public void resetAnswer(Button bt){
+        i--;
+        bt.setText(null);
+        int flag = bt.getPaintFlags();
+        for (int i = 0; i < arrBtHover.size(); i++){
+            if (arrBtHover.get(i).getPaintFlags() == flag){
+                arrBtHover.get(i).setVisibility(View.VISIBLE);
             }
         }
     }
@@ -224,6 +236,10 @@ public class PlayActivity extends AppCompatActivity implements View.OnClickListe
             }
             btNext.setVisibility(View.VISIBLE);
             tvToast.setVisibility(View.VISIBLE);
+            for (int i = 0; i < arrBtHover.size(); i++) {
+                arrBtHover.get(i).setClickable(false);
+                arrBtResult.get(i).setClickable(false);
+            }
         }
     }
 
@@ -233,9 +249,6 @@ public class PlayActivity extends AppCompatActivity implements View.OnClickListe
         switch (view.getId()) {
             case R.id.bt_next:
                 renewQuestion();
-                if (!arrBtResult.get(length - 1).getText().toString().isEmpty()) {
-                    isTrue(index);
-                }
                 btNext.setVisibility(View.INVISIBLE);
                 break;
             case R.id.bt_hover_1:
@@ -285,8 +298,56 @@ public class PlayActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.bt_hover_16:
                 actionButton(arrBtHover.get(15));
-
                 break;
+            case R.id.bt_result_1:
+                resetAnswer(arrBtResult.get(0));
+                break;
+            case R.id.bt_result_2:
+                resetAnswer(arrBtResult.get(1));
+                break;
+            case R.id.bt_result_3:
+                resetAnswer(arrBtResult.get(2));
+                break;
+            case R.id.bt_result_4:
+                resetAnswer(arrBtResult.get(3));
+                break;
+            case R.id.bt_result_5:
+                resetAnswer(arrBtResult.get(4));
+                break;
+            case R.id.bt_result_6:
+                resetAnswer(arrBtResult.get(5));
+                break;
+            case R.id.bt_result_7:
+                resetAnswer(arrBtResult.get(6));
+                break;
+            case R.id.bt_result_8:
+                resetAnswer(arrBtResult.get(7));
+                break;
+            case R.id.bt_result_9:
+                resetAnswer(arrBtResult.get(8));
+                break;
+            case R.id.bt_result_10:
+                resetAnswer(arrBtResult.get(9));
+                break;
+            case R.id.bt_result_11:
+                resetAnswer(arrBtResult.get(10));
+                break;
+            case R.id.bt_result_12:
+                resetAnswer(arrBtResult.get(11));
+                break;
+            case R.id.bt_result_13:
+                resetAnswer(arrBtResult.get(12));
+                break;
+            case R.id.bt_result_14:
+                resetAnswer(arrBtResult.get(13));
+                break;
+            case R.id.bt_result_15:
+                resetAnswer(arrBtResult.get(14));
+                break;
+            case R.id.bt_result_16:
+                resetAnswer(arrBtResult.get(15));
+                break;
+
             default:
                 break;
         }
