@@ -49,7 +49,6 @@ public class PlayActivity extends AppCompatActivity implements View.OnClickListe
         btNext.setOnClickListener(this);
 
         imgQuestion = (ImageView) findViewById(R.id.iv_question);
-        // imgQuestion.setImageResource(questionMgn.getArrQuestion().get(90).getId());
 
         arrBtResult = new ArrayList<>();
         arrBtResult.add((Button) findViewById(R.id.bt_result_1));
