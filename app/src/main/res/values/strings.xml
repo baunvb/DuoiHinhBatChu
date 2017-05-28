@@ -4,4 +4,6 @@
     <string name="str_true">Đáp án chính xác</string>
     <string name="play">Start Game</string>
     <string name="quit">QUIT GAME</string>
+    <string name="true_label">Bạn đã trả lời đúng!</string>
+    <string name="false_label">Bạn đã trả lời sai!</string>
 </resources>

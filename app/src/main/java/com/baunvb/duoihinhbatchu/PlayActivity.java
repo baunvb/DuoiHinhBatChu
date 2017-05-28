@@ -221,12 +221,12 @@ public class PlayActivity extends AppCompatActivity implements View.OnClickListe
         flag++;
         if (flag == length) {
             if (isTrue(index)) {
-                tvToast.setText("Bạn đã trả lời đúng!");
+                tvToast.setText(getString(R.string.true_label));
                 score = score + 100;
                 tvScore.setText(score + "");
             } else {
                 alive = alive - 1;
-                tvToast.setText("Bạn đã trả lời sai!");
+                tvToast.setText(getString(R.string.false_label));
                 tvAlive.setText(alive + "");
                 if (alive == 0) {
                     DialogEndGame dialogEndGame = new DialogEndGame(this, score);

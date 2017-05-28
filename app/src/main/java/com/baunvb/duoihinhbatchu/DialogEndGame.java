@@ -57,10 +57,12 @@ public class DialogEndGame extends Dialog implements View.OnClickListener {
         switch (v.getId()){
             case R.id.restart:
                 Intent playIntent = new Intent(context, PlayActivity.class);
+                this.dismiss();
                 context.startActivity(playIntent);
                 break;
             case R.id.exit:
                 Intent startIntent = new Intent(context, StartActivity.class);
+                this.dismiss();
                 context.startActivity(startIntent);
                 break;
         }
